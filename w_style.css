@@ -1,0 +1,198 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic); /*
+@import "event_register/iframe.less";
+@default-font-color: white;
+@link-font-color: #f37423;
+*/
+a:hover{
+    text-decoration: none;
+}
+
+.b-timepad-logo-icon img{
+        width:100px;
+        filter:invert(100%);
+}
+
+.b-timepad-logo-icon:before {
+    content: '';
+}
+
+.b-timepad-logo-icon:before:hover{
+    text-decoration: none;
+}
+
+.b-pro-wiget__reg-button {
+    font-size: 14px;
+    font-family: "Roboto";
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: #f37423;
+    padding: 18px 50px;
+    line-height: 1;
+    border-radius: 0px;
+}
+
+.b-pro-wiget__reg-button:hover {
+    background: #f37423 !important;
+    opacity: 0.7;
+}
+
+.b-input {
+    height: 45px !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    font-family: "Roboto" !important;
+    box-shadow: none !important;
+    background: white !important;
+    border-radius: 0px !important;
+    border: 0px !important;
+    color: black !important;
+}
+
+.b-input:hover {
+    box-shadow: none !important;
+}
+
+.i-page {
+    background: #262626 !important;
+    color: white;
+    margin-left: 21px;
+    margin-top: 56px;
+}
+
+.b-reg-table__select {
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    height: 45px !important;
+    display: inline-block !important;
+    position: relative !important;
+    top: 0px !important;
+    border-radius: 0px !important;
+    font-size: 14px !important;
+    width: 130px !important;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDM5ODdCRjlBMDAzMTFFNUE5Qjk5N0YyMUVGQzc0MUQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDM5ODdCRkFBMDAzMTFFNUE5Qjk5N0YyMUVGQzc0MUQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpEMzk4N0JGN0EwMDMxMUU1QTlCOTk3RjIxRUZDNzQxRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpEMzk4N0JGOEEwMDMxMUU1QTlCOTk3RjIxRUZDNzQxRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoChFr0AAAA6SURBVHjaYmBgYNgAxP/R8EYgZlAE4u9Igt+hYmBQiyRRx4AEOID4LhDfg7IZWKASP4A4D4nNABBgAMyZELLqV9CQAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-position: 114px 19px;
+}
+
+.b-registration__question, .b-smsk-cat-select__name {
+    font-size: 16px !important;
+    font-family: "Roboto" !important;
+    color: #ffffff !important;
+    line-height: 1 !important;
+    padding-bottom: 16px !important;
+    font-weight: 100 !important;
+}
+.b-smsk-cat{
+}
+
+.b-smsk-header {
+    margin-bottom: 30px;
+}
+
+.b-smsk-header__title {
+    padding-top: 10px;
+    font-size: 29.5px;
+    font-weight: 100;
+    font-family: Roboto;
+}
+
+.b-smsk-cat__select-age {
+    max-width: 410px;
+    height: 44px;
+    margin-top: 0 !important;
+    margin-left: 10px !important;
+}
+
+.b-smsk-cat__select-amount {
+    margin: 0 !important;
+    max-width: 130px;
+    height: 44px;
+}
+
+.b-smsk-cat-select__right {
+    padding-left: 13px;
+}
+
+.b-smsk-cat-select {
+    margin-bottom: 33px;
+}
+
+.b-registration__accept input {
+    font-size: 20px;
+}
+
+.b-registration__terms, .b-registration__accept span {
+    font-size: 14px !important;
+    font-family: "Roboto" !important;
+    color: #9f9f9f !important;
+    line-height: 1.571 !important;
+}
+
+.b-smsk-registration__btn_more {
+    font-size: 14px;
+    font-family: "Roboto";
+    color: #ffffff;
+    font-weight: 500;
+    margin: 18px 50px;
+    line-height: 1;
+    border-radius: 0px;
+}
+.b-smsk-registration__btn_more::before {
+    display: inline-block;
+    vertical-align: middle;
+    content: '+';
+    padding: 0 10px;
+    margin-top: -5px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.b-smsk-registration__btn_more:hover {
+    text-decoration: none;
+    color: #ddd;
+}
+
+.b-smsk-cat__btn_part {
+    text-align: center;
+    border: 2px solid #f37423;
+    font-size: 14px;
+    font-family: "Roboto";
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 0px;
+    padding:13px;
+    max-width: 132px;
+}
+
+.b-smsk-header__logo{
+    padding-left: 60px;
+}
+
+.row-fluid select[class*="span"] {
+    margin-left: 14px;
+    margin-top: 3px;
+}
+
+.shortSelectedTicketsInfo{
+    font-family: Roboto;
+    font-weight: 100;
+    margin-top: 50px;
+    margin-bottom: 28px;
+    font-size: 18px;
+}
+
+.b-smsk-cat__sum {
+    font-family: Roboto;
+    font-size: 2em;
+    font-weight: 100;
+}
+
+.b-smsk-registration__wraper{
+    max-width: 700px;
+}
+
+.b-smsk-registration-underline{
+    border-bottom: 1px dashed white;
+}
