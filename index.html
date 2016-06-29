@@ -37,25 +37,33 @@
     </script>
 
     <script type="text/javascript">
-           var pseudo_code_ts = function() {
-        
+    var pseudo_code_ts = function() {
+
         var w = this,
             l = this.mklog('custom');
-        
+
         w.obs.listen( 'postRepaint' , function () {
-            w.$$('.js-section-selectTickets').hide();
+            // w.$$('.js-section-selectTickets').hide();
             w.$$('.js-select-age, .js-select-count').change(catReSelect);
             w.$$('.b-smsk-cat').on('more-tickets-event', function () { //нажата кнопка добавить билеты
+                w.$$('.js-select-age').change(drop_amount);
                 w.$$('.js-select-count').change(tickets_selection); //изменено кол-во
             });
         });
-
+        
+        function drop_amount(){
+          var  $v = w.T$(this),
+               $v_am = w.T$(this).parents('.js-b-cat-select').find('.js-select-count').val();
+          if (parseInt($v_am) > 0) {
+            $v.parents('.js-b-cat-select').find('.js-select-count').val(0).change();
+          }
+        }
+        
         function tickets_selection() {
             var inputs = w.$$(".b-smsk-cat"); //собираем все инпуты
             var input_data = [];
             w.$$('.b-reg-table__select').val(0);
-            input_data = take_values(inputs, input_data); // собираем выбранные данные и вносим в массив складывая одинаковые поля
-            l('Values in array' + show_existed_elements(input_data));
+            input_data = take_values(inputs); // собираем выбранные данные и вносим в массив складывая одинаковые поля
             values_to_main_input(input_data); // не нулевые вносим в скрытую таблицу
             reduce_selected_tickets_info();
         }
@@ -64,29 +72,30 @@
             l('Reselecting categories');
             w.$$('.b-reg-table__cell .b-reg-table__select').val(0);
             var catId = w.$$('.js-select-age').val();
-            w.$$('.b-reg-table__select[data-reid="'+ catId +'"]').val( w.$$('.js-select-count').val() ).change();
-            w.$$('.b-smsk-cat').trigger('more-tickets-event');
+
+            w.$$('.b-reg-table__select[data-reid="'+ catId +'"]')
+                .val( w.$$('.js-select-count').val() )
+                .change()
+            ;
+            reduce_selected_tickets_info();
         }
 
-        function take_values(id,arr){
-            var arr = [],
-              category,amount;
-            id.each(function(index, element){
-                category = +w.$$(element).find('.js-select-age').val();
-                amount = +w.$$(element).find('.js-select-count').val();
-                to_array(category,amount,arr);
-                l(show_existed_elements(arr));
+        function take_values(id){
+            var result = [],
+                category, amount;
+
+            w.$$('.b-smsk-cat').each(function() {
+                category = w.T$(this).find('.js-select-age').val();
+                amount = +w.T$(this).find('.js-select-count').val();
+
+                if (!result[category]) {
+                    result[category] = amount;
+                } else {
+                    result[category] += amount;
+                }
             });
-            return arr;
-        }
 
-        function to_array(cat, num, arr) {
-            l('Pushing');
-            if (arr[cat]){
-                arr[cat] = arr[cat] + num;
-            } else {
-                arr[cat] = num;
-            }
+            return result;
         }
 
         function values_to_main_input(arr){
@@ -97,34 +106,37 @@
                     w.$$('.b-reg-table__select[data-reid="'+ e +'"]').val( i ).change();
                 }
             });
-          }
-          
-        function reduce_selected_tickets_info(){
-          var current_text = w.$$('.selectedTicketsInfo').text().split(' ');
-          l(current_text);
-          var new_text = current_text[ +current_text.indexOf('сумму')+1 ];
-          l(new_text);
-          w.$$('.b-smsk-cat__sum').text(new_text);
+        }
+
+        function reduce_selected_tickets_info() { /* ломается, если выбрать пустую категорию */
+            var current_text = w.$$('.selectedTicketsInfo').text().split(' ');
+            l(current_text);
+            var new_text = current_text[ +current_text.indexOf('сумму')+1 ];
+            l(new_text);
+            if (isNaN(parseInt(new_text))) {
+              w.$$('selectedTicketsInfo').hide();
+            } else {
+              w.$$('.b-smsk-cat__sum').text(new_text);
+            }
         }
 
         function show_existed_elements(arr){
             return arr.filter(function(element){
-                if (element) true;
+                return element; /* ouch */
             });
         }
     };
-      
-      var next_ticket_load = function () {
-          var w = this,
-              l = this.mklog('custom'),
-              tmpl = w.$$('.js-wrapper').html();
-          w.$$('.js-more-tickets').click( function () {
-              l(tmpl);
-              w.$$('.js-wrapper').append(tmpl);
-              w.$$('.b-smsk-cat').trigger('more-tickets-event');
-          });
-      };
-      
+
+    var next_ticket_load = function () {
+        var w = this,
+            l = this.mklog('custom'),
+            tmpl = w.$$('.js-wrapper').html();
+        w.$$('.js-more-tickets').click( function () {
+            l(tmpl);
+            w.$$('.js-wrapper').append(tmpl);
+            w.$$('.b-smsk-cat').trigger('more-tickets-event');
+        });
+    };
       
     </script>
 

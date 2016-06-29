@@ -7,6 +7,10 @@ a:hover{
     text-decoration: none;
 }
 
+select {
+    border-radius: 0;
+}
+
 .b-timepad-logo-icon img{
         width:100px;
         filter:invert(100%);
